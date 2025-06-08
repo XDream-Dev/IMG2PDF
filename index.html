@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Convert JPG images to PDF files easily online. Free JPG to PDF converter with support for uploads from device, Dropbox, and Google Drive.">
+    <meta name="keywords"
+        content="jpg to pdf,convert jpg to pdf,jpg to pdf converter,image to pdf,image to pdf converter">
+    <title>Images to PDF Converter | By XDream.Dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/toggle.css">
+    <link rel="stylesheet" href="./css/parallax_hover.css">
+    <link rel="stylesheet" href="./css/preview.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- Background Layers -->
+    <div class="bg-layer">
+        <div class="bg-gradient"></div>
+        <div class="graphic-element graphic-1"></div>
+        <div class="graphic-element graphic-2"></div>
+        <div class="graphic-element graphic-3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">📄</div>
+                    IMG2PDF
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Your Images to PDF in Seconds</h1>
+                    <p class="hero-subtitle">Convert JPG , PNG , WEBP images to PDF documents quickly and easily. Free,
+                        secure, and high-quality conversion.</p>
+                    <a href="#converter" class="btn">Start Converting Now</a>
+                </div>
+                <div class="hero-3d-element">
+                    <div class="converter-3d">
+                        <div class="converter-plane">
+                            <div class="file-element file-convertNow"></div>
+                            <div class="file-element file-jpg"></div>
+                            <div class="file-element file-pdf"></div>
+                            <div class="file-element file-webp"></div>
+
+                        </div>
+                        <div class="converter-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="80" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6zM13 9V3.5L18.5 9H13z" />
+                                <text x="6" y="17" font-size="6" fill="var(--primary)" font-family="Arial, sans-serif"
+                                    font-weight="bold">PDF</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="file-type-parallax">
+        <div class="file-icons-container">
+            <div class="file-icon" data-type="convert">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M8 17l4 4 4-4m-4-5v9m-4-9l-4 4 4 4m10-8h3m-3-4h3m-5 8h2a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h3" />
+                </svg>
+                <span>Convert</span>
+            </div>
+            <div class="file-icon" data-type="pdf">
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                    <path d="M14 2v6h6m-10 4h4m-4 4h2m2 0h2" />
+                </svg>
+                <span>PDF</span>
+            </div>
+            <div class="file-icon" data-type="jpg">
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                    <circle cx="10" cy="13" r="2" />
+                    <path d="M18 13a4 4 0 00-8 0" />
+                </svg>
+                <span>JPG</span>
+            </div>
+            <div class="file-icon" data-type="png">
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                    <path d="M10 10v4a2 2 0 104 0v-4a2 2 0 10-4 0z" />
+                </svg>
+                <span>PNG</span>
+            </div>
+            <div class="file-icon" data-type="webp">
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                    <path d="M10 10v4a2 2 0 104 0v-4a2 2 0 10-4 0z" />
+                    <path d="M16 10v4a2 2 0 104 0v-4a2 2 0 10-4 0z" />
+                </svg>
+                <span>WEBP</span>
+            </div>
+            <div class="file-icon" data-type="google">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.48 3-10s-1.34-10-3-10m0 20c-1.66 0-3-4.48-3-10s1.34-10 3-10" />
+                </svg>
+                <span>Drive</span>
+            </div>
+            <div class="file-icon" data-type="dropbox">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                    <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
+                </svg>
+                <span>Dropbox</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="converter-section" id="converter">
+        <div class="container">
+            <div class="converter-wrapper">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="device">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                            <rect x="9" y="9" width="6" height="6"></rect>
+                            <line x1="9" y1="1" x2="9" y2="4"></line>
+                            <line x1="15" y1="1" x2="15" y2="4"></line>
+                            <line x1="9" y1="20" x2="9" y2="23"></line>
+                            <line x1="15" y1="20" x2="15" y2="23"></line>
+                            <line x1="20" y1="9" x2="23" y2="9"></line>
+                            <line x1="20" y1="14" x2="23" y2="14"></line>
+                            <line x1="1" y1="9" x2="4" y2="9"></line>
+                            <line x1="1" y1="14" x2="4" y2="14"></line>
+                        </svg>
+                        Upload from Device
+                    </button>
+                    <button class="tab-btn" data-tab="dropbox">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        Dropbox URL
+                    </button>
+                    <button class="tab-btn" data-tab="drive">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                            <line x1="4" y1="22" x2="4" y2="15"></line>
+                        </svg>
+                        Google Drive
+                    </button>
+                </div>
+
+                <div class="tab-content active" id="deviceTab">
+                    <div class="upload-area" id="dropArea">
+                        <div class="upload-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                viewBox="0 0 24 24">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+
+                        </div>
+                        <h3 class="upload-text">Drag & drop your JPG files here</h3>
+                        <p class="upload-hint">Supports JPG, PNG, and other image formats</p>
+                        <button class="btn" id="selectFilesBtn">Select Files</button>
+                        <input type="file" id="fileInput" accept="image/jpeg,image/png" multiple style="display: none;">
+                    </div>
+                    <div class="preview-container" id="devicePreview">
+                        <div class="preview-header">
+                            <div class="file-info">
+                                <span class="file-name" id="deviceFileName"></span>
+                                <span class="file-size" id="deviceFileSize"></span>
+                            </div>
+                        </div>
+                        <div id="previewGrid" class="preview-grid"></div>
+                        <div class="action-buttons">
+                            <button class="btn" id="convertDeviceBtn">Convert to PDF</button>
+                            <button class="btn btn-secondary" id="downloadDeviceBtn" disabled>Download PDF</button>
+                            <button class="btn btn-outline" id="clearDeviceBtn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="dropboxTab">
+                    <div class="input-group">
+                        <label for="dropboxUrl" class="input-label">Enter Dropbox file URL</label>
+                        <input type="text" id="dropboxUrl" class="input-field"
+                            placeholder="https://www.dropbox.com/s/...">
+                    </div>
+                    <button class="btn" id="fetchDropboxBtn">Fetch Image</button>
+                    <div class="preview-container" id="dropboxPreview">
+                        <div class="file-info">
+                            <span class="file-name" id="dropboxFileName"></span>
+                        </div>
+                        <img class="preview-image" id="dropboxPreviewImage" src="" alt="Preview">
+                        <div class="action-buttons">
+                            <button class="btn" id="convertDropboxBtn">Convert to PDF</button>
+                            <button class="btn btn-secondary" id="downloadDropboxBtn">Download PDF</button>
+                            <button class="btn btn-outline" id="clearDropboxBtn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="driveTab">
+                    <div class="input-group">
+                        <label for="driveUrl" class="input-label">Enter Google Drive file URL</label>
+                        <input type="text" id="driveUrl" class="input-field"
+                            placeholder="https://drive.google.com/file/d/...">
+                    </div>
+                    <button class="btn" id="fetchDriveBtn">Fetch Image</button>
+                    <div class="preview-container" id="drivePreview">
+                        <div class="file-info">
+                            <span class="file-name" id="driveFileName"></span>
+                        </div>
+                        <img class="preview-image" id="drivePreviewImage" src="" alt="Preview">
+                        <div class="action-buttons">
+                            <button class="btn" id="convertDriveBtn">Convert to PDF</button>
+                            <button class="btn btn-secondary" id="downloadDriveBtn">Download PDF</button>
+                            <button class="btn btn-outline" id="clearDriveBtn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spinner" id="loadingSpinner"></div>
+
+
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Converter?</h2>
+                <p class="section-desc">Our JPG to PDF converter offers unmatched features to make your conversion
+                    experience seamless.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="120" height="120" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <!-- 3D Shadow Layer (offset) -->
+                                <path d="M28 4 L8 40 H28 L22 64 L54 26 H34 L40 4 Z" fill="#be123c"
+                                    transform="translate(2, 2)" />
+
+                                <!-- Main Front Layer -->
+                                <path d="M28 4 L8 40 H28 L22 64 L54 26 H34 L40 4 Z" fill="#e11d48" stroke="#0f0f0f"
+                                    stroke-width="2" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-desc">Convert your images to PDF in seconds with our optimized processing engine.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="120" height="120" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <!-- Shadow layer for retro 3D effect -->
+                                <path
+                                    d="M20 26 H44 a4 4 0 0 1 4 4 V52 a4 4 0 0 1 -4 4 H20 a4 4 0 0 1 -4 -4 V30 a4 4 0 0 1 4 -4 Z"
+                                    fill="#be123c" transform="translate(2,2)" />
+                                <rect x="24" y="16" width="16" height="12" rx="4" fill="#be123c"
+                                    transform="translate(2,2)" />
+
+                                <!-- Main lock body -->
+                                <path
+                                    d="M20 26 H44 a4 4 0 0 1 4 4 V52 a4 4 0 0 1 -4 4 H20 a4 4 0 0 1 -4 -4 V30 a4 4 0 0 1 4 -4 Z"
+                                    fill="#e11d48" stroke="#0f0f0f" stroke-width="2" />
+                                <rect x="24" y="16" width="16" height="12" rx="4" fill="#e11d48" stroke="#0f0f0f"
+                                    stroke-width="2" />
+
+                                <!-- Keyhole -->
+                                <circle cx="32" cy="42" r="3" fill="#0f0f0f" />
+                                <rect x="31" y="45" width="2" height="5" fill="#0f0f0f" rx="1" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <h3 class="feature-title">100% Secure</h3>
+                    <p class="feature-desc">Your files are processed locally and never stored on our servers. Your
+                        privacy is guaranteed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="120" height="120" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <!-- Shadow layer for 3D offset -->
+                                <circle cx="32" cy="32" r="24" fill="#be123c" transform="translate(2,2)" />
+
+                                <!-- Main globe circle -->
+                                <circle cx="32" cy="32" r="24" fill="#e11d48" stroke="#0f0f0f" stroke-width="2" />
+
+                                <!-- Vertical lines -->
+                                <ellipse cx="32" cy="32" rx="10" ry="24" fill="none" stroke="#0f0f0f"
+                                    stroke-width="2" />
+                                <ellipse cx="32" cy="32" rx="18" ry="24" fill="none" stroke="#0f0f0f"
+                                    stroke-width="2" />
+
+                                <!-- Horizontal lines -->
+                                <line x1="8" y1="32" x2="56" y2="32" stroke="#0f0f0f" stroke-width="2" />
+                                <path d="M8,32a24,8 0 0 1 48,0a24,8 0 0 1 -48,0" fill="none" stroke="#0f0f0f"
+                                    stroke-width="2" />
+                                <path d="M8,32a24,-8 0 0 0 48,0a24,-8 0 0 0 -48,0" fill="none" stroke="#0f0f0f"
+                                    stroke-width="2" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <h3 class="feature-title">Cloud Integration</h3>
+                    <p class="feature-desc">Directly convert files from Dropbox and Google Drive without downloading
+                        them first.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="150" height="150" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Shadow/3D effect -->
+                            <g transform="translate(3,3)">
+                                <path d="M15,80 L25,80 L25,30 L15,30 Z" fill="#be123c" />
+                                <circle cx="50" cy="55" r="15" fill="#be123c" />
+                                <circle cx="90" cy="55" r="15" fill="#be123c" />
+                                <path d="M35,80 C37,50 63,50 65,80 Z" fill="#be123c" />
+                                <path d="M75,80 C77,50 103,50 105,80 Z" fill="#be123c" />
+                            </g>
+
+                            <!-- Main red fill with black outline -->
+                            <path d="M15,80 L25,80 L25,30 L15,30 Z" fill="#e11d48" stroke="#0f0f0f" stroke-width="2" />
+                            <circle cx="50" cy="55" r="15" fill="#e11d48" stroke="#0f0f0f" stroke-width="2" />
+                            <circle cx="90" cy="55" r="15" fill="#e11d48" stroke="#0f0f0f" stroke-width="2" />
+                            <path d="M35,80 C37,50 63,50 65,80 Z" fill="#e11d48" stroke="#0f0f0f" stroke-width="2" />
+                            <path d="M75,80 C77,50 103,50 105,80 Z" fill="#e11d48" stroke="#0f0f0f" stroke-width="2" />
+                        </svg>
+
+
+                    </div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p class="feature-desc">Maintain the original quality and resolution of your images in the PDF
+                        output.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Users Say</h2>
+                <p class="section-desc">Thousands of people use our converter daily. Here's what they have to say.</p>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <div class="testimonial-slider">
+                    <div class="testimonial-item">
+                        <p class="testimonial-content">This is hands down the best JPG to PDF converter I've used. Super
+                            fast and the quality is amazing!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JD</div>
+                            <div class="author-info">
+                                <div class="author-name">John Doe</div>
+                                <div class="author-title">Photographer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="testimonial-content">I love how I can convert images directly from my Google Drive.
+                            Saves me so much time in my workflow.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AS</div>
+                            <div class="author-info">
+                                <div class="author-name">Amanda Smith</div>
+                                <div class="author-title">Graphic Designer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="testimonial-content">The interface is so intuitive and the conversion is lightning
+                            fast. Highly recommend this service!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MJ</div>
+                            <div class="author-info">
+                                <div class="author-name">Mike Johnson</div>
+                                <div class="author-title">Student</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pdf-footer">
+        <div class="container">
+            <div class="footer-content">
+
+
+                <!-- Main footer content -->
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="footer-logo">
+                            <div class="logo-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <span class="logo-text">JPG2PDF</span>
+                        </a>
+                        <p class="footer-desc">Convert images to PDF documents with high quality and security.</p>
+                        <div class="pdf-meta">
+                            <span class="pdf-meta-item">Version 2.1</span>
+                            <span class="pdf-meta-item">Online Converter</span>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h3 class="pdf-section-title">Quick Links</h3>
+                        <ul class="footer-link-list">
+                            <li><a href="#" class="pdf-link">Home</a></li>
+                            <li><a href="#converter" class="pdf-link">Convert</a></li>
+                            <li><a href="#" class="pdf-link">About</a></li>
+                            <li><a href="#" class="pdf-link">FAQs</a></li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="footer-links">
+                        <h3 class="pdf-section-title">Connect</h3>
+                        <ul class="footer-link-list">
+                            <li><a href="mailto:nabil.lemriki@gmail.com" class="pdf-link">nabil.lemriki@gmail.com</a>
+                            </li>
+                            <li><a href="https://github.com/XDream-Dev" class="pdf-link">Github</a></li>
+                            <li><a href="https://www.linkedin.com/in/nabil-lemriki-588550205/"
+                                    class="pdf-link">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PDF-style footer -->
+                <div class="pdf-footer-footer">
+                    <div class="pdf-footer-rule"></div>
+                    <div class="copyright">
+                        <p>© <span id="currentYear"></span> JPG to PDF Converter. XDream.Dev All rights reserved.</p>
+                        <p>Convert JPG, PNG, WEBP, and other image formats to PDF documents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toastNotification">
+        <button class="toast-close">&times;</button>
+        <p class="toast-message" id="toastMessage"></p>
+    </div>
+
+    <!-- Add this inside your converter-section, just before the closing </div> for the container -->
+    <div class="theme-toggle-container">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-icon">
+                <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </span>
+            <span class="toggle-text">+</span>
+        </button>
+    </div>
+
+    <script src="./js/App.js"></script>
+    <script src="./js/convert.js"></script>
+    <script src="./js/toggle.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/parallax_hover_effect.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+/* File Type Icons with Parallax */
+.file-type-parallax {
+    position: relative;
+    margin: 2rem 0;
+    height: 80px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  .file-icons-container {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+  
+  .file-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-md);
+    background: var(--surface);
+    backdrop-filter: blur(4px);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .file-icon:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .file-icon:hover svg {
+    stroke: white;
+  }
+  
+  .file-icon:hover span {
+    color: white;
+  }
+  
+  .file-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .file-icon span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--dark);
+    transition: all 0.3s ease;
+  }
+  
+  /* Active State */
+  .file-icon.active {
+    background: var(--primary);
+  }
+  
+  .file-icon.active svg {
+    stroke: white;
+  }
+  
+  .file-icon.active span {
+    color: white;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .file-type-parallax {
+      height: 70px;
+      margin: 1.5rem 0;
+    }
+    
+    .file-icons-container {
+      gap: 1rem;
+      padding: 1rem;
+    }
+    
+    .file-icon {
+      min-width: 50px;
+      padding: 0.4rem;
+    }
+    
+    .file-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .file-icon span {
+      font-size: 0.65rem;
+    }
+  }
+  
+  /* Dark Mode Adjustments */
+  [data-theme="dark"] .file-icon {
+    background: var(--surface-dark);
+  }
+  
+  [data-theme="dark"] .file-icon span {
+    color: var(--light);
+  }

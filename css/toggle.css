@@ -1,0 +1,253 @@
+/* Theme Toggle Styles */
+.theme-toggle-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.toggle-icon svg {
+  position: absolute;
+  transition: var(--transition);
+}
+
+.toggle-icon .sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.toggle-icon .moon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .toggle-icon .sun {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+[data-theme="dark"] .toggle-icon .moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.toggle-text {
+  font-weight: 500;
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] {
+  --light: #0f172a; /* Dark background */
+  --dark: #f1f5f9; /* Light text */
+  --gray: #64748b; /* Lighter gray for dark mode */
+  --surface: rgba(15, 23, 42, 0.95); /* Dark glass effect */
+  --surface-dark: rgba(241, 245, 249, 0.04); /* Light card background */
+}
+
+[data-theme="dark"] .logo {
+  color: var(--dark);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* Update your existing elements to use these variables */
+[data-theme="dark"] .converter-section {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+[data-theme="dark"] .upload-area {
+  background-color: var(--surface);
+  border-color: var(--gray);
+  color: var(--dark);
+}
+
+[data-theme="dark"] .input-field {
+  background-color: var(--surface);
+  color: var(--dark);
+  border-color: var(--gray);
+}
+
+[data-theme="dark"] .input-field:focus {
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .tab-btn {
+  color: var(--dark);
+}
+
+[data-theme="dark"] .tab-btn.active {
+  background-color: #4e46e559;
+  color: var(--dark);
+}
+
+[data-theme="dark"] .hero-text {
+
+  color: var(--dark);
+
+
+}
+
+[data-theme="dark"] .hero-text h1 {
+  color: var(--dark);
+}
+[data-theme="dark"] .hero-text p {
+  color: var(--dark);
+}
+
+
+[data-theme="dark"] .feature-card {
+    background-color: #4e46e514;
+    backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background-color: var(--dark);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--dark);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .section-title h2 {
+    color: var(--dark);
+    text-shadow: 0 0 5px var(--dark);
+}
+
+[data-theme="dark"] .section-title p {
+    color: var(--dark);
+}
+
+[data-theme="dark"] .converter-wrapper {
+    background-color: #4e46e514;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: var(--border-radius-lg);
+}
+
+[data-theme="dark"] .footer-link-liste {
+    color: var(--dark);
+}
+
+
+
+
+[data-theme="dark"] .converter-section,
+.converter-section {
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+[data-theme="dark"] .upload-area,
+.upload-area {
+  transition: background-color 0.6s ease, border-color 0.6s ease;
+}
+
+[data-theme="dark"] .input-field,
+.input-field {
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+}
+
+[data-theme="dark"] .logo {
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+}
+
+
+[data-theme="dark"] .converter-plane {
+  transition: color 0.6s ease, text-shadow 0.6s ease;
+  background-color: #0f172aea;
+
+}
+
+
+  [data-theme="dark"] .file-icon span {
+    color: #ffffff!important;
+    transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+
+
+.logo {
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+}
+
+.hero-text h1{
+    transition: color 0.6s ease;
+}
+
+.hero-text p{
+    transition: color 0.6s ease;
+}
+
+.hero-content {
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+}
+
+.section-title h2 {
+  transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+
+.feature-title {
+  transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+
+.converter-plane {
+    transition: background-color 1s ease, text-shadow 1s ease;
+}
+
+.file-icons-container {
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+}
+
+
+/* Button hover effects with matching timing */
+.theme-toggle {
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+html {
+    --transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.converter-icon{
+    transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+
+
+.pdf-footer {
+    transition:  5s ease;
+}
