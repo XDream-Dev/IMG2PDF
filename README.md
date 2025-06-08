@@ -1,6 +1,6 @@
 # IMG2PDF Converter
 
-![IMG2PDF Logo](2.png)
+![IMG2PDF Logo](Images-to-PDF-Converter-DarkTheme.png)
 
 A modern, fast, and secure web application that converts various image formats (JPG, PNG, WEBP) to PDF documents with high quality and privacy in mind.
 
