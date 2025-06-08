@@ -1,6 +1,6 @@
 # IMG2PDF Converter
 
-![IMG2PDF Logo](Images-to-PDF-Converter-DarkTheme.png)
+![IMG2PDF Logo](Images-to-PDF-Converter-DarkTheme.webp)
 
 A modern, fast, and secure web application that converts various image formats (JPG, PNG, WEBP) to PDF documents with high quality and privacy in mind.
 
@@ -18,10 +18,6 @@ IMG2PDF/
 │   └── main.js          # Core functionality
 └── README.md
 ```
-
-## 🌟 Features
-
-// ...existing code...
 
 ## 🛠 Technologies Used
 
